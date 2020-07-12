@@ -76,6 +76,23 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: "gatsby-plugin-html2amp",
+      options: {
+        files: ["./**/**/index.html"],
+        publicPath: "public",
+        dist: "public/amp",
+        optimize: true,
+        htmlPlugins: [],
+        cssPlugins: [],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: `https://www.your-website.com`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

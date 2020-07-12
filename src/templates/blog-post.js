@@ -1,53 +1,47 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import Img from "gatsby-image"
+import styled from "styled-components"
+import { H1, Date, Content, OtherPost } from "../components/Primitives"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
 
+  const frontmatter = data.markdownRemark.frontmatter
+
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        pathName={post.frontmatter.slug}
       />
+
       <article>
         <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
-            {post.frontmatter.title}
-          </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
-            {post.frontmatter.date}
-          </p>
+          <H1>{post.frontmatter.title}</H1>
+          <Date>{post.frontmatter.date}</Date>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+
+        {frontmatter?.thumbnailBlog && (
+          <Image
+            alt="Cover Image"
+            fluid={frontmatter?.thumbnailBlog?.childImageSharp?.fluid}
+          />
+        )}
+
+        <Content dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
             marginBottom: rhythm(1),
           }}
         />
-        <footer>
-          <Bio />
-        </footer>
       </article>
-
       <nav>
         <ul
           style={{
@@ -60,16 +54,16 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <OtherPost to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
-              </Link>
+              </OtherPost>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <OtherPost to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
-              </Link>
+              </OtherPost>
             )}
           </li>
         </ul>
@@ -95,7 +89,19 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        thumbnailBlog {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
+`
+
+const Image = styled(Img)`
+  border-radius: 50px;
+  box-shadow: -20px 20px 40px #d5d2d0, 20px -20px 40px #ffffff;
 `
