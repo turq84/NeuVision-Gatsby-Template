@@ -24,7 +24,7 @@ export const LoginWrap = styled.div`
   width: 400px;
   height: 600px;
   border-radius: 50px;
-  box-shadow: -20px 20px 40px #d5d2d0, 20px -20px 40px #ffffff;
+  box-shadow: 5px 5px 15px #d5d2d0, -5px -5px 15px #ffffff;
 
   @media screen and (max-width: 768px) {
     width: auto;
@@ -43,8 +43,12 @@ export const Input = styled.input`
   border-radius: 24px;
   background-color: transparent;
   border-color: transparent;
-  box-shadow: inset -5px 5px 20px #d5d2d0, inset 5px -5px 20px #ffffff;
+  box-shadow: inset 5px 5px 15px #d5d2d0, inset -5px -5px 15px #ffffff;
   padding: 10px 15px;
+
+  &:focus {
+    outline: none;
+  }
 `
 
 export const Button = styled.button`
@@ -54,7 +58,7 @@ export const Button = styled.button`
   color: #fff;
   border-radius: 24px;
   border: transparent;
-  box-shadow: -28px 28px 57px #d5d2d0, 28px -28px 57px #ffffff;
+  box-shadow: 5px 5px 15px #d5d2d0, -5px -5px 15px #ffffff;
   margin-bottom: 30px;
   cursor: pointer;
 `
@@ -118,7 +122,7 @@ export const Feature = styled.div`
   height: 400px;
   margin: 0px 20px;
   border-radius: 50px;
-  box-shadow: -20px 20px 40px #d5d2d0, 20px -20px 40px #ffffff;
+  box-shadow: 5px 5px 15px #d5d2d0, -5px -5px 15px #ffffff;
 
   @media screen and (max-width: 768px) {
     width: 90%;
@@ -143,8 +147,8 @@ export const FeatureIcon = styled.div`
     height: 60px;
     border-radius: 50%;
     padding: 10px;
-    /* box-shadow: -20px 20px 40px #d5d2d0, 20px -20px 40px #ffffff; */ /* raised */
-    box-shadow: inset -5px 5px 20px #d5d2d0, inset 5px -5px 20px #ffffff; /* pressed */
+    /* box-shadow: 5px 5px 15px #d5d2d0, -5px -5px 15px #ffffff; */ /* raised */
+    box-shadow: inset 5px 5px 15px #d5d2d0, inset -5px -5px 15px #ffffff; /* pressed */
   }
 `
 export const NewsLetterWrap = styled.div`
@@ -152,7 +156,7 @@ export const NewsLetterWrap = styled.div`
   width: 550px;
   padding: 30px;
   border-radius: 24px;
-  box-shadow: -20px 20px 40px #d5d2d0, 20px -20px 40px #ffffff;
+  box-shadow: 5px 5px 15px #d5d2d0, -5px -5px 15px #ffffff;
 
   @media screen and (max-width: 700px) {
     width: 90%;
@@ -166,8 +170,13 @@ export const NewsLetterInput = styled.input`
   border-radius: 24px;
   background-color: transparent;
   border-color: transparent;
-  box-shadow: inset -5px 5px 20px #d5d2d0, inset 5px -5px 20px #ffffff;
+  box-shadow: inset 5px 5px 15px #d5d2d0, inset -5px -5px 15px #ffffff;
   padding: 10px 15px;
+  color: var(--text);
+
+  &:focus {
+    outline: none;
+  }
 
   @media screen and (max-width: 768px) {
     width: 90%;
@@ -182,7 +191,7 @@ export const NewsLetterButton = styled.button`
   color: #fff;
   border-radius: 24px;
   border: transparent;
-  box-shadow: -28px 28px 57px #d5d2d0, 28px -28px 57px #ffffff;
+  box-shadow: 5px 5px 15px #d5d2d0, -5px -5px 15px #ffffff;
   margin-bottom: 30px;
   cursor: pointer;
 
@@ -201,7 +210,7 @@ export const BlogHero = styled.div`
   width: max-content;
   padding: 20px;
   background: #fbf7f5;
-  box-shadow: inset -20px 20px 60px #d5d2d0, inset 20px -20px 60px #ffffff;
+  box-shadow: 5px 5px 15px #d5d2d0, -5px -5px 15px #ffffff;
   border-radius: 24px;
 
   h1 {
@@ -218,7 +227,7 @@ export const BlogPost = styled.article`
   transition: 0.6s;
 
   &:hover {
-    box-shadow: inset -10px 10px 40px #d5d2d0, inset 10px -10px 40px #ffffff;
+    box-shadow: inset 5px 5px 15px #d5d2d0, inset -5px -5px 15px #ffffff;
     transition: 0.6s;
   }
 `
@@ -231,14 +240,14 @@ export const OtherPost = styled(Link)`
   transition: 0.6s;
 
   &:hover {
-    box-shadow: inset -10px 10px 20px #d5d2d0, inset 10px -10px 20px #ffffff;
+    box-shadow: inset 5px 5px 15px #d5d2d0, inset -5px -5px 15px #ffffff;
     transition: 0.6s;
   }
 `
 
 // 5. Side Menu
 export const SideDrawerWrap = styled(animated.nav)`
-  background-color: #fbf7f5;
+  background-color: var(--bodyBkgd);
   height: 100%;
   box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3);
   position: fixed;
@@ -275,13 +284,13 @@ export const Ul = styled.ul`
 export const Li = styled.li`
   margin-top: 1.3rem;
   border-radius: 50px;
-  box-shadow: -20px 20px 40px #d5d2d0, 20px -20px 40px #ffffff;
+  box-shadow: 5px 5px 15px #d5d2d0, -5px -5px 15px #ffffff;
   width: max-content;
   padding: 10px 15px;
   transition: 2s;
 
   &:hover {
-    box-shadow: inset -5px 5px 20px #d5d2d0, inset 5px -5px 20px #ffffff;
+    box-shadow: inset 5px 5px 15px #d5d2d0, inset -5px -5px 15px #ffffff;
     transition: 2s;
   }
 `

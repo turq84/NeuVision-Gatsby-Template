@@ -8,7 +8,7 @@ NeuVision is a Neumorphic Gatsby Template that is **AMP** ready, out of the pack
 
 **To see a live demo, click [here](https://hungry-elion-3babd3.netlify.app/).**
 
-The NeuVision template was created by me, [Kayla Gordon](https://twitter.com/kayla_finland). If you want to work together, let's talk. 🚀
+The NeuVision template was created & designed by me, [Kayla Gordon](https://twitter.com/kayla_finland). If you want to work together, let's talk. 🚀
 
 ## AMP ⚡
 

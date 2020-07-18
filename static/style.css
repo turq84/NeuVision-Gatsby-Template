@@ -1,5 +1,6 @@
 body {
-  --bodyBkgd: #fbf7f5;
+  /* --bodyBkgd: #fbf7f5; */
+  --bodyBkgd: #ededed;
   --bg: #f8f8ff;
   --text: #555;
   --textTitle: #222;
@@ -41,27 +42,32 @@ a {
 }
 
 blockquote {
-  box-shadow: inset -10px 10px 20px #d5d2d0, inset 10px -10px 20px #ffffff;
-  border-radius: 10px;
-  padding: 30px;
-  border-left: none;
+  font-style: italic;
+  font-weight: 400;
+  border-left: 4px solid var(--text);
 }
 
-blockquote:before {
-  content: open-quote;
-  font-size: 2em;
-  margin-left: -0.6em;
-  margin-top: -0.4em;
-}
-
-blockquote:after {
-  content: close-quote;
-  font-size: 2em;
-  margin-right: -0.8em;
-  margin-bottom: -0.8em;
-}
 blockquote p {
   display: inline;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  /* -webkit-box-shadow: 0 0 0 30px white inset !important; */
+  background-color: var(--bodyBkgd) !important;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--text);
+  box-shadow: inset 5px 5px 15px #d5d2d0, inset -5px -5px 15px #ffffff;
+  -webkit-box-shadow: inset 5px 5px 15px #d5d2d0, inset -5px -5px 15px #ffffff;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 @media only screen and (max-width: 768px) {
