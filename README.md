@@ -1,6 +1,6 @@
 # NeuVision Gatsby Template
 
-![NeuVision](NeuVision1.png)
+![NeuVision](NeuVision.png)
 
 ## Welcome! 👋
 
