@@ -2,6 +2,7 @@ import React from "react"
 import "../../static/style.css"
 import { Container } from "./Primitives"
 import Header from "./header"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   return (
@@ -9,14 +10,7 @@ const Layout = ({ children }) => {
       <Header />
       <Container>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built and designed by{" "}
-          <a href="https://www.kayla-gordon.com" target="_blank">
-            Kayla Gordon
-          </a>{" "}
-          using {` `}
-          <a href="https://www.gatsbyjs.org">GatsbyJs</a>
-        </footer>
+        <Footer />
       </Container>
     </>
   )

@@ -8,6 +8,7 @@ import { animated } from "react-spring"
 // 3. Blog Page
 // 4. Blog Template
 // 5. Side Menu
+// 6. Footer
 
 // 1. General
 export const Container = styled.div`
@@ -307,4 +308,10 @@ export const Date = styled.p`
 `
 export const Content = styled.section`
   margin-top: 50px;
+`
+// 6. Footer
+export const FooterWrap = styled.div`
+  width: max-content;
+  margin: 0px auto 50px auto;
+  text-align: center;
 `
