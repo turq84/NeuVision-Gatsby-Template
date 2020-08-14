@@ -42,8 +42,8 @@ export const Input = styled.input`
   width: 100%;
   margin: 10px 20px 10px 0px;
   border-radius: 24px;
-  background-color: transparent;
-  border-color: transparent;
+  background-color: #fff;
+  border: none;
   box-shadow: inset 5px 5px 15px #d5d2d0, inset -5px -5px 15px #ffffff;
   padding: 10px 15px;
 
@@ -148,6 +148,7 @@ export const FeatureIcon = styled.div`
     height: 60px;
     border-radius: 50%;
     padding: 10px;
+    background-color: #fff;
     /* box-shadow: 5px 5px 15px #d5d2d0, -5px -5px 15px #ffffff; */ /* raised */
     box-shadow: inset 5px 5px 15px #d5d2d0, inset -5px -5px 15px #ffffff; /* pressed */
   }
@@ -169,8 +170,8 @@ export const NewsLetterInput = styled.input`
   width: 70%;
   margin: 10px 20px 10px 0px;
   border-radius: 24px;
-  background-color: transparent;
-  border-color: transparent;
+  background-color: #fff;
+  border: none;
   box-shadow: inset 5px 5px 15px #d5d2d0, inset -5px -5px 15px #ffffff;
   padding: 10px 15px;
   color: var(--text);
@@ -285,14 +286,14 @@ export const Ul = styled.ul`
 export const Li = styled.li`
   margin-top: 1.3rem;
   border-radius: 50px;
-  box-shadow: 5px 5px 15px #d5d2d0, -5px -5px 15px #ffffff;
   width: max-content;
-  padding: 10px 15px;
-  transition: 2s;
+  padding: 10px 40px;
+  text-transform: uppercase;
+  transition: 0.3s;
 
   &:hover {
     box-shadow: inset 5px 5px 15px #d5d2d0, inset -5px -5px 15px #ffffff;
-    transition: 2s;
+    transition: 0.3s;
   }
 `
 export const Logo = styled.div`

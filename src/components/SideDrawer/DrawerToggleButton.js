@@ -34,7 +34,6 @@ const ToggleButtonLine = styled.div`
   width: 30px;
   height: 5px;
   border-radius: 24px;
-  background-color: transparent;
-  border-color: transparent;
-  box-shadow: inset -2px 2px 5px #d5d2d0, inset 2px -2px 5px #ffffff;
+  background-color: var(--header);
+  border: none;
 `

@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Newsletter from "../components/Newsletter/newsletter"
 import {
   LoginWrap,
   H2,
@@ -18,9 +19,6 @@ import {
   FeatureHeader,
   FeatureIcon,
   FeatureText,
-  NewsLetterButton,
-  NewsLetterInput,
-  NewsLetterWrap,
 } from "../components/Primitives"
 
 const Index = ({ data, location }) => {
@@ -106,12 +104,7 @@ const Index = ({ data, location }) => {
           </Feature>
         </Row>
 
-        <NewsLetterWrap>
-          <h4>NeuVision Newsletter</h4>
-          <p>Keep up with the lastest NueVision news!</p>
-          <NewsLetterInput placeholder="Email" />
-          <NewsLetterButton type="submit">Subscribe</NewsLetterButton>
-        </NewsLetterWrap>
+        <Newsletter />
       </MainWrap>
     </Layout>
   )
