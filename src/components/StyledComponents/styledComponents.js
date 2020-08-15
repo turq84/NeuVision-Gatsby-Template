@@ -226,24 +226,37 @@ export const BlogPost = styled.article`
   padding: 50px;
   border-radius: 50px;
   background: transparent;
-  transition: 0.6s;
+  transition: 0.3s;
 
   &:hover {
     box-shadow: inset 5px 5px 15px #d5d2d0, inset -5px -5px 15px #ffffff;
-    transition: 0.6s;
+    transition: 0.3s;
+  }
+`
+export const ReadMoreButton = styled(Link)`
+  background-color: var(--header);
+  padding: 10px 20px;
+  color: #fff;
+  border: transparent;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: 15px 15px 45px #d5d2d0, -15px -15px 45px #ffffff;
+    transition: 0.3s;
   }
 `
 
 // 4. Blog Post Template
 export const OtherPost = styled(Link)`
-  box-shadow: -20px 20px 40px #d5d2d0, 20px -20px 40px #ffffff;
   padding: 10px 15px;
   border-radius: 50px;
-  transition: 0.6s;
+  transition: 0.3s;
 
   &:hover {
     box-shadow: inset 5px 5px 15px #d5d2d0, inset -5px -5px 15px #ffffff;
-    transition: 0.6s;
+    transition: 0.3s;
   }
 `
 

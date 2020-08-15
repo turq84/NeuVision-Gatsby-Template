@@ -3,7 +3,7 @@ import {
   NewsLetterWrap,
   NewsLetterInput,
   NewsLetterButton,
-} from "../Primitives"
+} from "../StyledComponents/styledComponents"
 
 const Newsletter = () => {
   return (

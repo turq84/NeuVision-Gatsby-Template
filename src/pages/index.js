@@ -19,7 +19,7 @@ import {
   FeatureHeader,
   FeatureIcon,
   FeatureText,
-} from "../components/Primitives"
+} from "../components/StyledComponents/styledComponents"
 
 const Index = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title

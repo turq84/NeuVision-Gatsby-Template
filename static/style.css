@@ -30,6 +30,7 @@ h4,
 h5 {
   color: var(--header);
   font-family: Montserrat, sans-serif;
+  font-weight: bold;
 }
 
 h1 {

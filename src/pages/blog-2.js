@@ -2,25 +2,25 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import styled from "styled-components"
 import {
   H1,
   BlogHero,
   BlogWrap,
   BlogPost,
 } from "../components/StyledComponents/styledComponents"
+import HeroImage from "../components/Blog/HeroImage"
 
-const BlogIndex = ({ data, location }) => {
+const Blog2 = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+  const posts = data.allPosts.edges
+  const newestPost = data.newestPost.edges
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="NeuVision Blog" pathName="/blog" />
+      <SEO title="NeuVision Blog #2" pathName="/blog-2" />
 
-      {/* <BlogHero> */}
-      <H1>NeuVision Blog</H1>
-      {/* </BlogHero> */}
+      <HeroImage data={newestPost} />
 
       <BlogWrap>
         {posts.map(({ node }) => {
@@ -28,11 +28,7 @@ const BlogIndex = ({ data, location }) => {
           return (
             <BlogPost key={node.fields.slug}>
               <header>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
+                <h3>
                   <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                     {title}
                   </Link>
@@ -53,8 +49,7 @@ const BlogIndex = ({ data, location }) => {
     </Layout>
   )
 }
-
-export default BlogIndex
+export default Blog2
 
 export const pageQuery = graphql`
   query {
@@ -63,7 +58,9 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allPosts: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       edges {
         node {
           excerpt
@@ -75,6 +72,34 @@ export const pageQuery = graphql`
             title
             description
           }
+        }
+      }
+    }
+    newestPost: allMarkdownRemark(
+      sort: { order: DESC, fields: frontmatter___date }
+      limit: 1
+    ) {
+      totalCount
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            postDay: date(formatString: "DD")
+            postMonthYear: date(formatString: " MMM YYYY", locale: "en")
+            thumbnailBlog {
+              childImageSharp {
+                fluid(maxWidth: 800, quality: 100) {
+                  src
+                }
+              }
+            }
+          }
+          excerpt
+          timeToRead
         }
       }
     }

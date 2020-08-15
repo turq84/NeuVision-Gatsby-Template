@@ -5,7 +5,12 @@ import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import { H1, Date, Content, OtherPost } from "../components/Primitives"
+import {
+  H1,
+  Date,
+  Content,
+  OtherPost,
+} from "../components/StyledComponents/styledComponents"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -91,7 +96,7 @@ export const pageQuery = graphql`
         description
         thumbnailBlog {
           childImageSharp {
-            fluid {
+            fluid(maxWidth: 600, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -102,6 +107,5 @@ export const pageQuery = graphql`
 `
 
 const Image = styled(Img)`
-  border-radius: 50px;
   box-shadow: -20px 20px 40px #d5d2d0, 20px -20px 40px #ffffff;
 `

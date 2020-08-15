@@ -1,6 +1,6 @@
 import React from "react"
 import "../../static/style.css"
-import { Container } from "./Primitives"
+import { Container } from "./StyledComponents/styledComponents"
 import Header from "./header"
 import Footer from "./footer"
 

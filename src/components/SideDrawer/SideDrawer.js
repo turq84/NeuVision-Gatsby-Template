@@ -11,7 +11,7 @@ import {
   Ul,
   Li,
   Logo,
-} from "../Primitives"
+} from "../StyledComponents/styledComponents"
 
 const SideDrawer = props => {
   const handleClick = () => {

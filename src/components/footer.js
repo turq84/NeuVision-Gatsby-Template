@@ -1,6 +1,6 @@
 import React from "react"
 import GithubButtons from "./GithubButtons/GithubButtons"
-import { FooterWrap } from "./Primitives"
+import { FooterWrap } from "./StyledComponents/styledComponents"
 
 const Footer = () => {
   return (
